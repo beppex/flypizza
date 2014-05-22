@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://10.0.0.213/ci/';
+$config['base_url']	= 'http://localhost/flypizza/';
 
 /*
 |--------------------------------------------------------------------------
