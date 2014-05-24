@@ -6,7 +6,7 @@ class Home extends PublicController
         $this->template->set_template('flypizza');
         
         $this->template->write('title','Benvenuto');
-        $this->template->write_view('content','home_content');
+        $this->template->write_view('content','home_view');
         $this->template->write('footer','Flypizza 1.0');
         $this->template->render();
     }
