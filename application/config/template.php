@@ -92,6 +92,14 @@ $template['admin']['parser'] = 'parser';
 $template['admin']['parser_method'] = 'parse';
 $template['admin']['parse_template'] = FALSE;
 
+//template flypizza
+$template['flypizza']['template'] = 'flypizza';
+$template['flypizza']['regions'] = array(
+  'title','content','footer'
+);
+$template['flypizza']['parser'] = 'parser';
+$template['flypizza']['parser_method'] = 'parse';
+$template['flypizza']['parse_template'] = FALSE;
 
 /* End of file template.php */
 /* Location: ./system/application/config/template.php */
