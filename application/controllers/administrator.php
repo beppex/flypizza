@@ -38,7 +38,27 @@ class Administrator extends CI_Controller
         redirect('administrator');
     }
     
-    public function update_stato () {}
+    public function update_stato ($idordine = NULL) 
+    {
+        $this->template->set_template('backend');
+        
+        $this->template->write('title','Aggiorna gli ordini');
+        $this->template->write_view('content','administrator_update');
+        $this->template->render();
+
+        $stato = $this->input->post('stato');
+                
+        $this->db->where('idordine', $idordine);
+        
+        if ($stato != NULL) 
+        {
+            $data = array
+            (
+               'stato' => $stato,
+            );
+            $this->db->update('ordine', $data); 
+        }
+    }
     
     public function password_check ($str) 
     {
@@ -57,7 +77,7 @@ class Administrator extends CI_Controller
         $this->load->library('pagination');
         $this->template->set_template('backend');
      
-        $query = $this->db->query('SELECT cliente.nominativo, ordine.indirizzo, ordine.orario, ordine.conto, ordine.stato '
+        $query = $this->db->query('SELECT cliente.nominativo, ordine.indirizzo, ordine.orario, ordine.conto, ordine.stato, ordine.idordine '
                                 . 'FROM cliente '
                                     . 'INNER JOIN ordine '
                                         . 'ON cliente.idcliente=ordine.idcliente');
