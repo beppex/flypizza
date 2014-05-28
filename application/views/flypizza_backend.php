@@ -37,8 +37,8 @@
     <body>
         <div id="wrapper">
             <div id="header">
-                <img src="http://localhost/fly_pizza/images/logo2.png" />
-                <img src="http://localhost/fly_pizza/images/nome2.png" />
+                <img src="http://localhost/flypizza/images/logo2.png" />
+                <img src="http://localhost/flypizza/images/nome2.png" />
             </div>
             <div id="container">
                 <?php echo $content; ?>

@@ -10,7 +10,7 @@ class Administrator extends CI_Controller
     public function login()
     {
         $this->load->library('form_validation');
-        $this->template->set_template('default');
+        $this->template->set_template('backend');
         
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'callback_password_check');
@@ -55,7 +55,8 @@ class Administrator extends CI_Controller
     public function orders_page ($offset = 0) 
     {
         $this->load->library('pagination');
-        
+        $this->template->set_template('backend');
+     
         $query = $this->db->query('SELECT cliente.nominativo, ordine.indirizzo, ordine.orario, ordine.conto, ordine.stato '
                                 . 'FROM cliente '
                                     . 'INNER JOIN ordine '

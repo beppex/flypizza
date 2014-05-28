@@ -16,7 +16,11 @@
                 ."<td>$o->orario</td>"
                 ."<td>$o->conto €</td>"
                 ."<td>$o->stato</td>";
-            
+    ?>
+    <td>
+        <?php echo anchor ('administrator/update_stato/'.$o->idordine,'Modifica') ?>
+    </td>
+    <?php
             echo "</tr>";
         }
     ?>

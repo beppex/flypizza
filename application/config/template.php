@@ -56,7 +56,7 @@ $template['active_template'] = 'default';
 |--------------------------------------------------------------------------
 */
 
-$template['default']['template'] = 'flypizza_backend';
+$template['default']['template'] = 'template';
 $template['default']['regions'] = array(
   'title','content','footer'
 );
@@ -100,6 +100,14 @@ $template['flypizza']['regions'] = array(
 $template['flypizza']['parser'] = 'parser';
 $template['flypizza']['parser_method'] = 'parse';
 $template['flypizza']['parse_template'] = FALSE;
+
+$template['backend']['template'] = 'flypizza_backend';
+$template['backend']['regions'] = array(
+  'title','content'
+);
+$template['backend']['parser'] = 'parser';
+$template['backend']['parser_method'] = 'parse';
+$template['backend']['parse_template'] = FALSE;
 
 /* End of file template.php */
 /* Location: ./system/application/config/template.php */
