@@ -46,18 +46,7 @@ class Administrator extends CI_Controller
         $this->template->write_view('content','administrator_update');
         $this->template->render();
 
-        $stato = $this->input->post('stato');
-                
-        $this->db->where('idordine', $idordine);
         
-        if ($stato != NULL) 
-        {
-            $data = array
-            (
-               'stato' => $stato,
-            );
-            $this->db->update('ordine', $data); 
-        }
     }
     
     public function password_check ($str) 
