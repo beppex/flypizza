@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mag 27, 2014 alle 21:50
+<<<<<<< OURS
+-- Generation Time: Mag 28, 2014 alle 20:58
+=======
+-- Generation Time: Mag 23, 2014 alle 18:58
+>>>>>>> THEIRS
 -- Versione del server: 5.5.36
 -- PHP Version: 5.4.27
 
@@ -56,18 +60,31 @@ CREATE TABLE IF NOT EXISTS `ordine` (
   `indirizzo` varchar(20) NOT NULL,
   `orario` varchar(15) NOT NULL,
   `idcliente` int(11) NOT NULL,
-  `conto` float NOT NULL,
-  `stato` varchar(10) NOT NULL,
   PRIMARY KEY (`idordine`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dump dei dati per la tabella `ordine`
 --
 
+<<<<<<< OURS
 INSERT INTO `ordine` (`idordine`, `numerocivico`, `citofono`, `timestamp`, `indirizzo`, `orario`, `idcliente`, `conto`, `stato`) VALUES
-(1, 20, 'sacco', '2014-05-23 13:51:07', 'via del levriere', '8:00 - 8:15', 1, 20.5, 'attesa'),
-(2, 15, 'rossi', '2014-05-23 13:51:07', 'via dante', '8:30 - 8: 45', 2, 30.5, 'attesa');
+(2, 15, 'rossi', '2014-05-23 13:51:07', 'via dante', '8:30 - 8: 45', 2, 30.5, 'attesa'),
+(3, 0, '', '2014-05-28 15:30:09', '', '', 0, 0, 'consegna'),
+(4, 0, '', '2014-05-28 15:34:31', '', '', 0, 0, 'consegna'),
+(5, 0, '', '2014-05-28 15:36:06', '', '', 0, 0, 'consegna'),
+(6, 0, '', '2014-05-28 15:36:15', '', '', 0, 0, 'consegna'),
+(7, 0, '', '2014-05-28 15:43:18', '', '', 0, 0, 'attesa'),
+(8, 0, '', '2014-05-28 15:43:27', '', '', 0, 0, 'consegna'),
+(9, 0, '', '2014-05-28 15:45:14', '', '', 0, 0, 'consegna'),
+(10, 0, '', '2014-05-28 15:47:17', '', '', 0, 0, 'consegna'),
+(11, 0, '', '2014-05-28 18:33:28', '', '', 0, 0, 'consegna'),
+(12, 20, 'sacco', '2014-05-28 18:58:11', 'via del levriere', '8.00 - 8.15', 1, 45.5, 'attesa');
+=======
+INSERT INTO `ordine` (`idordine`, `numerocivico`, `citofono`, `timestamp`, `indirizzo`, `orario`, `idcliente`) VALUES
+(1, 20, 'sacco', '2014-05-23 13:51:07', 'via del levriere', '8:00 - 8:15', 1),
+(2, 15, 'rossi', '2014-05-23 13:51:07', 'via dante', '8:30 - 8: 45', 2);
+>>>>>>> THEIRS
 
 -- --------------------------------------------------------
 
@@ -79,6 +96,7 @@ CREATE TABLE IF NOT EXISTS `ordinepizza` (
   `idordinepizza` int(11) NOT NULL AUTO_INCREMENT,
   `idordine` int(11) NOT NULL,
   `idpizza` int(11) NOT NULL,
+  `prezzoordine` float NOT NULL,
   `note` varchar(30) NOT NULL,
   PRIMARY KEY (`idordinepizza`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -123,15 +141,16 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   PRIMARY KEY (`session_id`),
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+<<<<<<< OURS
 
 --
 -- Dump dei dati per la tabella `sessions`
 --
 
 INSERT INTO `sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('4ee750230239fbef460a3b698a094739', '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1401220085, ''),
-('c1070022b0419f70d63deba8b2e63311', '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1401219975, ''),
-('eed0a96c7f2061ba8424cc3208419f4f', '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1401220164, '');
+('3d0cd3a272dad25ef1e23b08af48d48b', '::1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36', 1401303282, '');
+=======
+>>>>>>> THEIRS
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

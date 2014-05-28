@@ -5,6 +5,7 @@
         <th>Orario</th>
         <th>Conto</th>
         <th>Stato</th>
+        <th colspan="2">Strumenti</th>
     </tr>
     <?php
         foreach ($ordini as $o) 
@@ -18,7 +19,10 @@
                 ."<td>$o->stato</td>";
     ?>
     <td>
-        <?php echo anchor ('admin/orders/update_view/'.$o->idordine,'Modifica') ?>
+        <?php echo anchor ('admin/orders/update_stato/'.$o->idordine,'Modifica') ?>
+    </td>
+    <td>
+        <?php echo anchor ('admin/orders/delete/'.$o->idordine,'Elimina') ?>
     </td>
     <?php
             echo "</tr>";

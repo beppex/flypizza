@@ -36,12 +36,65 @@ class Orders extends AdminController
     
     public function update_stato ($idordine = NULL) 
     {
+        /*
         $this->template->set_template('backend');
         
         $data['idordine']=$idordine;
         $this->template->write('title','Aggiorna gli ordini');
         $this->template->write_view('content','admin/order_update',$data);
         $this->template->render();
+        */
         
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+        
+        if($idordine != NULL) 
+        {
+            $this->db->where('idordine', $idordine);
+            $query = $this->db->get('ordine');            
+            $ordine = $query->row();
+        }
+        else 
+        {
+            $ordine = new stdClass();
+            $ordine->idordine = "";
+        }        
+
+        $this->form_validation->set_rules('stato', 'Stato', 'required');        
+
+        if($this->form_validation->run() == FALSE) 
+        {
+            $data['idordine']=$idordine;
+            $this->template->write('title','Aggiorna gli ordini');
+            $this->template->write_view('content','admin/order_update',$data);
+            $this->template->render();
+        }
+        else 
+        {                        
+            $ordine = new stdClass();
+            $ordine->idordine   = $this->input->post('idordine');
+            $ordine->stato   = $this->input->post('stato');
+                       
+            
+            if($ordine->idordine == NULL) 
+            {
+                $this->db->insert('ordine', $ordine);            
+            }
+            else 
+            {
+                $this->db->query("UPDATE ordine SET ordine.stato='$ordine->stato' WHERE ordine.idordine = $ordine->idordine");
+                
+            }
+            
+            redirect('admin/orders');
+        }        
+    }
+    
+    public function delete ($idordine) 
+    {
+        $this->db->where('idordine', $idordine);
+        $this->db->delete('ordine');
+        
+        redirect('admin/orders');
     }
 }
