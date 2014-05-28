@@ -56,7 +56,7 @@ $template['active_template'] = 'default';
 |--------------------------------------------------------------------------
 */
 
-$template['default']['template'] = 'template';
+$template['default']['template'] = 'flypizza_backend';
 $template['default']['regions'] = array(
   'title','content','footer'
 );
