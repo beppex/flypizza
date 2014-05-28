@@ -45,8 +45,8 @@ class Administrator extends CI_Controller
         $this->template->write('title','Aggiorna gli ordini');
         $this->template->write_view('content','administrator_update');
         $this->template->render();
-
         
+               
     }
     
     public function password_check ($str) 
