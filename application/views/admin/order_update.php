@@ -1,5 +1,5 @@
 <?php 
-echo form_open('administrator/update_stato');
+echo form_open('admin/orders/update_stato');
 ?>
     Stato dell'Ordine:<br/>
     <select name="stato">
@@ -9,4 +9,4 @@ echo form_open('administrator/update_stato');
     <input type="submit"/>
 </form>
 
-<?php echo anchor('administrator/orders_page','Torna Indietro')?>
+<?php echo anchor('admin/orders/page','Torna Indietro')?>

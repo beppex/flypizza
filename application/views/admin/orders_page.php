@@ -18,7 +18,7 @@
                 ."<td>$o->stato</td>";
     ?>
     <td>
-        <?php echo anchor ('administrator/update_stato/'.$o->idordine,'Modifica') ?>
+        <?php echo anchor ('admin/orders/update_view/'.$o->idordine,'Modifica') ?>
     </td>
     <?php
             echo "</tr>";

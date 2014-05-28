@@ -8,7 +8,7 @@ class BaseController extends CI_Controller
     {
         parent::__construct();
         
-        $this->my_user = $this->session->userdata('utente');                
+        $this->my_user = $this->session->userdata('session_id');                
     }
 }
 
@@ -27,7 +27,7 @@ class AdminController extends BaseController
             redirect('administrator/login');
         }
         
-        $this->template->set_template("admin");
+        $this->template->set_template("backend");
     }    
     
     public function show($region, $stringa)
@@ -42,9 +42,8 @@ class AdminController extends BaseController
     
     public function renderize()
     {
-        $this->template->write('footer', "Benvenuto ". $this->my_user->nominativo);
-        
-        $this->template->add_css("css/stylesheet.css");
+      //$this->template->write('footer', "Benvenuto ". $this->my_user->nominativo);
+      //$this->template->add_css("css/stylesheet.css");
         $this->template->render();
     }
         
